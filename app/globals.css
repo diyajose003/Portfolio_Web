@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+
+  --color-page: #fafaf9;
+  --color-surface: #ffffff;
+  --color-ink: #18181b;
+  --color-muted: #57575f;
+  --color-line: #e4e4e7;
+  --color-accent: #0f766e;
+  --color-accent-soft: #ccfbf1;
+  --color-danger: #b91c1c;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-page: #0c0c0e;
+    --color-surface: #151518;
+    --color-ink: #f4f4f5;
+    --color-muted: #a1a1aa;
+    --color-line: #27272a;
+    --color-accent: #2dd4bf;
+    --color-accent-soft: #134e4a;
+    --color-danger: #f87171;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    color-scheme: light dark;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+  body {
+    @apply bg-page font-sans text-ink antialiased;
+  }
+  :focus-visible {
+    @apply rounded-sm outline-2 outline-offset-2 outline-accent;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-4xl px-5 sm:px-8;
+  }
+  .section-title {
+    @apply mb-8 font-mono text-sm font-medium tracking-wide text-accent;
+  }
+  .card {
+    @apply rounded-xl border border-line bg-surface;
+  }
+  .tag {
+    @apply rounded-md bg-accent-soft/60 px-2.5 py-1 text-sm text-ink;
+  }
+  .btn {
+    @apply inline-flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .btn-primary {
+    @apply bg-ink text-page hover:bg-ink/85;
+  }
+  .btn-secondary {
+    @apply border border-line bg-surface text-ink hover:border-ink/30;
+  }
+  .link {
+    @apply inline-flex items-center gap-1.5 text-accent underline-offset-4 hover:underline;
+  }
+  .input {
+    @apply w-full rounded-lg border border-line bg-page px-3 py-2 text-sm text-ink placeholder:text-muted/70 focus:border-accent;
+  }
+  .prose-body p {
+    @apply mb-4 leading-relaxed text-muted last:mb-0 sm:text-lg;
+  }
+  .prose-body a {
+    @apply text-accent underline underline-offset-4;
+  }
+  .prose-body ul {
+    @apply mb-4 list-disc pl-5 text-muted;
+  }
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-ink focus:px-3 focus:py-2 focus:text-page;
+  }
+}
