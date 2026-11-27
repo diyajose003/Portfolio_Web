@@ -1,0 +1,9 @@
+{
+  "groups": [
+    { "name": "Languages", "items": ["Java", "Python", "SQL", "JavaScript", "HTML", "CSS"] },
+    { "name": "Backend", "items": ["Spring Boot", "JDBC", "REST APIs"] },
+    { "name": "Databases", "items": ["MySQL", "PostgreSQL", "Database design"] },
+    { "name": "Tools", "items": ["Git", "GitHub", "IntelliJ IDEA", "VS Code", "Postman"] },
+    { "name": "Fundamentals", "items": ["Object-oriented programming", "Data structures and algorithms", "DBMS"] }
+  ]
+}
