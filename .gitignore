@@ -1,0 +1,16 @@
+node_modules/
+.next/
+out/
+coverage/
+next-env.d.ts
+*.tsbuildinfo
+
+# Tina: generated admin bundle and local database
+public/admin/
+tina/__generated__/
+.tina/
+
+# Secrets
+.env
+.env.*
+!.env.example
